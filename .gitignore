@@ -34,3 +34,9 @@ Thumbs.db
 .agents/
 .claude/
 .windsurf/
+
+# AI/tooling files
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
