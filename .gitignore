@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Test coverage
+coverage/
+
+# Build output
+dist/
+
+# Generated files
+src/generated/prisma/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local AI/editor tooling
+.agents/
+.claude/
+.windsurf/
+
+# Local AI/tooling files
+.agents/
+.claude/
+.windsurf/
