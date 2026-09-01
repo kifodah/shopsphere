@@ -30,6 +30,27 @@ pipeline {
                 sh 'npm ci'
             }
         }
+
+        stage('Check Database Configuration') {
+            steps {
+                sh '''
+                   if [ -z "$DATABASE_URL" ]; then
+                       echo "ERROR: DATABASE_URL is empty"
+                       exit 1
+                   fi
+
+                   case "$DATABASE_URL" in
+                       postgresql://*|postgres://*)
+                           echo "DATABASE_URL is present and has a valid PostgreSQL protocol."
+                           ;;
+                       *)
+                           echo "ERROR: DATABASE_URL does not start with postgresql:// or postgres://"
+                           exit 1
+                           ;;
+                   esac
+                '''
+            }
+        }
 	
 	stage('Prisma Validate') {
             steps {
