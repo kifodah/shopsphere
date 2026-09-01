@@ -11,6 +11,8 @@ pipeline {
         K8S_DEPLOYMENT = 'shopsphere'
         K8S_CONTAINER = 'shopsphere'
         KUBECONFIG = '/var/lib/jenkins/.kube/config'
+
+	DATABASE_URL = credentials('shopsphere-database-url')
     }
 
     stages {
