@@ -28,6 +28,13 @@ pipeline {
                 sh 'npm ci'
             }
         }
+	
+	stage('Prisma Validate') {
+            steps {
+                echo 'Validating Prisma schema...'
+                sh 'npx prisma validate'
+            }
+        }
 
         stage('Prisma Generate') {
             steps {
